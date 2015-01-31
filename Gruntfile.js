@@ -36,11 +36,19 @@ module.exports = function(grunt) {
         }
       }
     },
+    cssmin: {
+      dist: {
+        expand: true,
+        cwd: 'assets/',
+        src: ['*.css'],
+        dest: 'assets/'
+      }
+    }
 
 
   });
 
-  grunt.registerTask('default', ['imagemin','uncss','jekyll']);
+  grunt.registerTask('default', ['imagemin','uncss','cssmin','jekyll']);
 
 };
 
