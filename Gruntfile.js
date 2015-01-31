@@ -12,6 +12,20 @@ module.exports = function(grunt) {
         }
       }
     },
+    imagemin: {
+      static: {
+        options: {
+          optimizationLevel: 3
+        },
+        files: [{
+          expand: true,
+          cwd: 'img',
+          src: '**/*.{png,PNG,jpg,JPG,gif,GIF,jpeg,JPEG}',
+          dest: 'img'
+        }]
+      }
+    },
+
 
   });
 
