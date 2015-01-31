@@ -1,0 +1,24 @@
+{
+  "name": "JSOxford",
+  "version": "0.0.0",
+  "description": "jsoxford.github.com ===================",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AverageMarcus/jsoxford.github.com.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/AverageMarcus/jsoxford.github.com/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "load-grunt-tasks": "~3.1.0",
+    "grunt-jekyll": "~0.4.2"
+  }
+}
