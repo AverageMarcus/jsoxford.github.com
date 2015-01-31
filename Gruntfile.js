@@ -43,12 +43,43 @@ module.exports = function(grunt) {
         src: ['*.css'],
         dest: 'assets/'
       }
-    }
+    },
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true
+        },
+        files: [
+        {
+          expand: true,
+          cwd: '_site/',
+          src: ['*.html','**/*.html'],
+          dest: '_site/'
+        },
+        {
+          expand: true,
+          cwd: '_layouts/',
+          src: ['*.html','**/*.html'],
+          dest: '_layouts/'
+        },
+        {
+          expand: true,
+          cwd: 'irc/',
+          src: ['*.html','**/*.html'],
+          dest: 'irc/'
+        },
+        ]
+      }
+    },
 
 
   });
 
-  grunt.registerTask('default', ['imagemin','uncss','cssmin','jekyll']);
+  grunt.registerTask('default', ['imagemin','uncss','cssmin','htmlmin','jekyll']);
 
 };
 
