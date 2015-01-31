@@ -25,11 +25,21 @@ module.exports = function(grunt) {
         }]
       }
     },
+    uncss: {
+      dist: {
+        options: {
+          stylesheets: ['assets/style.css']
+        },
+        files: {
+          'assets/style.css': ['*.html','_layouts/*.html','_site/*.html', 'irc/*.html']
+        }
+      }
+    },
 
 
   });
 
-  grunt.registerTask('default', ['imagemin','jekyll']);
+  grunt.registerTask('default', ['imagemin','uncss','jekyll']);
 
 };
 
