@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('default', ['jekyll']);
+  grunt.registerTask('default', ['imagemin','jekyll']);
 
 };
 
