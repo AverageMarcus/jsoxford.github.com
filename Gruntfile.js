@@ -9,6 +9,7 @@ module.exports = function(grunt) {
           config: '_config.yml',
           serve: true,
           port: 5000,
+          nowatch: true
         }
       }
     },
