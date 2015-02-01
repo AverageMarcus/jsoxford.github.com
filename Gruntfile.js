@@ -4,14 +4,20 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 
 		jekyll: {
-      dist: {
+      build: {
+        options: {
+          config: '_config.yml',
+          serve: false
+        }
+      },
+      serve: {
         options: {
           config: '_config.yml',
           serve: true,
           port: 5000,
           nowatch: true
         }
-      }
+      },
     },
     imagemin: {
       static: {
@@ -20,34 +26,33 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'img',
+          cwd: '_site/img',
           src: '**/*.{png,PNG,jpg,JPG,gif,GIF,jpeg,JPEG}',
-          dest: 'img'
+          dest: '_site/img'
         }]
       }
     },
     uncss: {
       dist: {
         options: {
-          stylesheets: ['assets/style.css']
+          stylesheets: ['_site/assets/style.css']
         },
         files: {
-          'assets/style.css': ['*.html','_layouts/*.html','_site/*.html', 'irc/*.html']
+          '_site/assets/style.css': ['*.html','**/*.html']
         }
       }
     },
     cssmin: {
       dist: {
         expand: true,
-        cwd: 'assets/',
+        cwd: '_site/assets/',
         src: ['*.css'],
-        dest: 'assets/'
+        dest: '_site/assets/'
       }
     },
     htmlmin: {
       dist: {
         options: {
-          removeComments: true,
           collapseWhitespace: true,
           removeRedundantAttributes: true,
           removeScriptTypeAttributes: true,
@@ -59,19 +64,7 @@ module.exports = function(grunt) {
           cwd: '_site/',
           src: ['*.html','**/*.html'],
           dest: '_site/'
-        },
-        {
-          expand: true,
-          cwd: '_layouts/',
-          src: ['*.html','**/*.html'],
-          dest: '_layouts/'
-        },
-        {
-          expand: true,
-          cwd: 'irc/',
-          src: ['*.html','**/*.html'],
-          dest: 'irc/'
-        },
+        }
         ]
       }
     },
@@ -79,7 +72,9 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('default', ['imagemin','uncss','cssmin','htmlmin','jekyll']);
+  grunt.registerTask('build', ['jekyll:build']);
+  grunt.registerTask('optimize', ['imagemin','uncss','cssmin','htmlmin']);
+  grunt.registerTask('default', ['build','optimize']);
 
 };
 
