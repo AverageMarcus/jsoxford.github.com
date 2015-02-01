@@ -71,7 +71,8 @@ module.exports = function(grunt) {
     'gh-pages': {
       options: {
         base: '_site',
-        push: false
+        push: false,
+        message: 'Saving to gh-pages'
       },
       src: ['**']
     },
