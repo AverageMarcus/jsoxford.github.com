@@ -68,13 +68,19 @@ module.exports = function(grunt) {
         ]
       }
     },
-
-
+    'gh-pages': {
+      options: {
+        base: '_site',
+        push: false
+      },
+      src: ['**']
+    },
   });
 
   grunt.registerTask('build', ['jekyll:build']);
   grunt.registerTask('optimize', ['imagemin','uncss','cssmin','htmlmin']);
-  grunt.registerTask('default', ['build','optimize']);
+  grunt.registerTask('branch', ['gh-pages']);
+  grunt.registerTask('default', ['build','optimize','branch']);
 
 };
 
