@@ -1,3 +1,5 @@
+var jpegRecompress = require('imagemin-jpeg-recompress');
+
 module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 
@@ -22,7 +24,8 @@ module.exports = function(grunt) {
     imagemin: {
       static: {
         options: {
-          optimizationLevel: 3
+          optimizationLevel: 7,
+          use: [jpegRecompress()]
         },
         files: [{
           expand: true,
@@ -54,9 +57,13 @@ module.exports = function(grunt) {
       dist: {
         options: {
           collapseWhitespace: true,
+          removeComments: true,
+          removeEmptyAttributes: true,
           removeRedundantAttributes: true,
           removeScriptTypeAttributes: true,
-          removeStyleLinkTypeAttributes: true
+          removeStyleLinkTypeAttributes: true,
+          minifyJS: true,
+          minifyCSS: true
         },
         files: [
         {
@@ -68,20 +75,21 @@ module.exports = function(grunt) {
         ]
       }
     },
-    'gh-pages': {
-      options: {
-        base: '_site',
-        push: false,
-        message: 'Saving to gh-pages'
-      },
-      src: ['**']
-    },
+    connect: {
+      server: {
+        options: {
+          port: 5000,
+          base: '_site',
+          keepalive: true,
+          hostname: '*'
+        }
+      }
+    }
   });
 
   grunt.registerTask('build', ['jekyll:build']);
   grunt.registerTask('optimize', ['imagemin','uncss','cssmin','htmlmin']);
-  grunt.registerTask('branch', ['gh-pages']);
-  grunt.registerTask('default', ['build','optimize','branch']);
+  grunt.registerTask('default', ['build','optimize','connect']);
 
 };
 
