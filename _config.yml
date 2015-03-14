@@ -1,4 +1,6 @@
 safe: true
 lsi: false
+highlighter: pygments
 pygments: true
-permalink: /:year/:title/ 
+permalink: /:year/:title/
+markdown: kramdown

@@ -1,11 +1,19 @@
-var jpegRecompress = require('imagemin-jpeg-recompress');
-
 module.exports = function(grunt) {
-	require('load-grunt-tasks')(grunt);
+  require('load-grunt-tasks')(grunt);
 
-	grunt.initConfig({
+  grunt.initConfig({
 
-		jekyll: {
+    less: {
+      build: {
+        options: {
+          paths: ["css"]
+        },
+        files: {
+          "css/style.css": "css/style.less"
+        }
+      }
+    },
+    jekyll: {
       build: {
         options: {
           config: '_config.yml',
@@ -24,8 +32,7 @@ module.exports = function(grunt) {
     imagemin: {
       static: {
         options: {
-          optimizationLevel: 7,
-          use: [jpegRecompress()]
+          optimizationLevel: 7
         },
         files: [{
           expand: true,
@@ -38,19 +45,19 @@ module.exports = function(grunt) {
     uncss: {
       dist: {
         options: {
-          stylesheets: ['_site/assets/style.css']
+          stylesheets: ['_site/css/style.css']
         },
         files: {
-          '_site/assets/style.css': ['*.html','**/*.html']
+          '_site/css/style.css': ['*.html','**/*.html', '!node_modules/**/*.html']
         }
       }
     },
     cssmin: {
       dist: {
         expand: true,
-        cwd: '_site/assets/',
+        cwd: '_site/css/',
         src: ['*.css'],
-        dest: '_site/assets/'
+        dest: '_site/css/'
       }
     },
     htmlmin: {
@@ -78,7 +85,7 @@ module.exports = function(grunt) {
     connect: {
       server: {
         options: {
-          port: 5000,
+          port: 4000,
           base: '_site',
           keepalive: true,
           hostname: '*'
@@ -87,10 +94,10 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('build', ['jekyll:build']);
+  grunt.registerTask('build', ['less','jekyll:build']);
   grunt.registerTask('optimize', ['imagemin','uncss','cssmin','htmlmin']);
-  grunt.registerTask('default', ['build','optimize','connect']);
+  grunt.registerTask('prod', ['build','optimize','connect']);
+  grunt.registerTask('default', ['build','connect']);
 
 };
-
 
