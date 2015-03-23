@@ -4,7 +4,7 @@
  <title>JS Oxford</title>
  <link href="http://jsoxford.com/atom.xml" rel="self"/>
  <link href="http://jsoxford.com/"/>
- <updated>2015-03-23T20:19:37+00:00</updated>
+ <updated>2015-03-23T20:38:13+00:00</updated>
  <id>http://jsoxford.com/</id>
  <author>
    <name>JS Oxford</name>
@@ -689,7 +689,7 @@ Experiences on the web don’t have to be constrained to a single browser window
 
 &lt;p&gt;If you went to jQuery UK the day before - you’ve already been there!&lt;/p&gt;
 
-&lt;div&gt;&lt;iframe width=&quot;100%&quot; height=&quot;400&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; src=&quot;https://maps.google.co.uk/maps?hl=en&amp;amp;q=king+center+oxford&amp;amp;ie=UTF8&amp;amp;hq=king+center&amp;amp;hnear=Oxford,+United+Kingdom&amp;amp;t=m&amp;amp;ll=51.764122,-1.24609&amp;amp;spn=0.042497,0.102825&amp;amp;z=13&amp;amp;iwloc=A&amp;amp;output=embed&quot;&gt; &lt;/iframe&gt;&lt;br /&gt;&lt;small&gt;&lt;a href=&quot;https://maps.google.co.uk/maps?hl=en&amp;amp;q=king+center+oxford&amp;amp;ie=UTF8&amp;amp;hq=king+center&amp;amp;hnear=Oxford,+United+Kingdom&amp;amp;t=m&amp;amp;ll=51.764122,-1.24609&amp;amp;spn=0.042497,0.102825&amp;amp;z=13&amp;amp;iwloc=A&amp;amp;source=embed&quot; style=&quot;color:#0000FF;text-align:left&quot;&gt;View Larger Map&lt;/a&gt;&lt;/small&gt;&lt;/div&gt;
+&lt;div&gt;&lt;iframe width=&quot;100%&quot; height=&quot;400&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; src=&quot;https://www.google.com/maps/embed?hl=en&amp;amp;q=king+center+oxford&amp;amp;ie=UTF8&amp;amp;hq=king+center&amp;amp;hnear=Oxford,+United+Kingdom&amp;amp;t=m&amp;amp;ll=51.764122,-1.24609&amp;amp;spn=0.042497,0.102825&amp;amp;z=13&amp;amp;iwloc=A&amp;amp;output=embed&quot;&gt; &lt;/iframe&gt;&lt;br /&gt;&lt;small&gt;&lt;a href=&quot;https://maps.google.co.uk/maps?hl=en&amp;amp;q=king+center+oxford&amp;amp;ie=UTF8&amp;amp;hq=king+center&amp;amp;hnear=Oxford,+United+Kingdom&amp;amp;t=m&amp;amp;ll=51.764122,-1.24609&amp;amp;spn=0.042497,0.102825&amp;amp;z=13&amp;amp;iwloc=A&amp;amp;source=embed&quot; style=&quot;color:#0000FF;text-align:left&quot;&gt;View Larger Map&lt;/a&gt;&lt;/small&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;what-do-i-need-to-bring&quot;&gt;What do I need to bring?&lt;/h3&gt;
 
